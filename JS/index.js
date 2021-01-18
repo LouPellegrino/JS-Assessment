@@ -144,9 +144,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
   });
-  const submitButton = document.querySelector('#btnSubmit');
-  submitButton.onclick = function (e) {
-    document.quizBlock.score.innerHTML =`You got a score of ${calculateScore}`;
+  const btnSubmit = document.querySelector('#btnSubmit');
+  btnSubmit.addEventListener = 'click', function (e) {
+    document.querySelector('#score').style.display = 'block';
+    btnSubmit.quizBlock.score.innerHTML =`You got a score of ${calculateScore}`;
   }
   
   
