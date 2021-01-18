@@ -144,11 +144,11 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
   });
-  const btnSubmit = document.querySelector('#btnSubmit');
-  btnSubmit.addEventListener = 'click', function (e) {
-    document.querySelector('#score').style.display = 'block';
-    btnSubmit.quizBlock.score.innerHTML =`You got a score of ${calculateScore}`;
-  }
+  // const btnSubmit = document.querySelector('#btnSubmit');
+  // btnSubmit.addEventListener = 'click', function (e) {
+  //   document.querySelector('#score').style.display = 'block';
+  //   btnSubmit.quizBlock.score.innerHTML =`You got a score of ${calculateScore}`;
+  // }
   
   
   // quizArray QUESTIONS & ANSWERS
@@ -201,7 +201,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Calculate the score
   const calculateScore = () => {
-    const scoreDisplay = document.querySelector("#score");
+    const showScore = document.querySelector("#score");
     let score = 0;
     quizArray.map((quizItem, index) => {
       for (let i = 0; i < 4; i++) {
@@ -217,16 +217,24 @@ window.addEventListener('DOMContentLoaded', () => {
         if (radioElement.checked) {
           // code for task 1 goes here
           if(quizItem.a == i ){
-            score += 20;
-          }
+            score += 1;
           }
         }
-      }
-    );
-         
-          calculateScore();
-          console.log('calculateScore');
-          scoreDisplay();
+      } 
+        
+     showScore.innerText = score;
+    });
+
+    const btnSubmit = document.querySelector("#btnSubmit");
+
+    btnSubmit.addEventListener("click", calculateScore);
+
+  // btnSubmit.addEventListener = 'click', function () {
+  //     document.querySelector('#score').style.display = 'block';
+  //     btnSubmit.quizBlock.score.innerHTML =`You got a score of ${calculateScore}`;
+  //   };
+   
+          
   
       
           // function showResults
