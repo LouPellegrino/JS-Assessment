@@ -209,8 +209,8 @@ window.addEventListener('DOMContentLoaded', () => {
           liElement.style.backgroundColor = "green";
           
           //change background color of li element here if incorrect
-        } else {
-          liElement.style.backgroundColor = "red";
+        // } else {
+        //   liElement.style.backgroundColor = "orange";
         }
         // code for task 1 goes here
         if (radioElement.checked && quizItem.a === i) {
