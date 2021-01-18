@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+body {
+    font-family: Roboto, 'Courier New', Courier, monospace;
+    background-color: orange;
+}
+
+#start-card {
+  background-color: rgb(31, 31, 63);
+  /* font-weight:bold; */
+  line-height: 40px;
+  font-size: 1.5em;
+}
+#start-card h2{
+ 
+  font-weight:bold;
+  font-size: 2em;
+}
+
+
+
+#quizBlock {
+  text-align: center;
+  padding: 30px;
+  font-weight:bold;
+  font-size: large;
+}
+
+#quizBlock h2 {
+    font-size: 3em;
+    font-weight: bold;
+    color:  #1b767e; 
+}
+
+ /* Timer code below */
+body {
+  font-family: sans-serif;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.base-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 15px;
+}
+
