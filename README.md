@@ -1,4 +1,4 @@
-# JS-Assessment
+<!-- # JS-Assessment
 Created a quiz to test our JavaScript knowledge
 
 # JS Assessment
@@ -21,4 +21,4 @@ Complete the following tasks:
 
 The assessment must be completed by 2pm. When you have finished, upload your work to GitHub Pages and share the link with your
 pod instructor by DM on Slack.
-
+ -->
