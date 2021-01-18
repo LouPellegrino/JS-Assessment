@@ -144,12 +144,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
   });
-  // const btnSubmit = document.querySelector('#btnSubmit');
-  // btnSubmit.addEventListener = 'click', function (e) {
-  //   document.querySelector('#score').style.display = 'block';
-  //   btnSubmit.quizBlock.score.innerHTML =`You got a score of ${calculateScore}`;
-  // }
-  
+ 
   
   // quizArray QUESTIONS & ANSWERS
   // q = QUESTION, o = OPTIONS, a = CORRECT ANSWER
@@ -200,66 +195,59 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   // Calculate the score
+  let score = 0;
   const calculateScore = () => {
-    const showScore = document.querySelector("#score");
-    let score = 0;
-    quizArray.map((quizItem, index) => {
+       quizArray.map((quizItem, index) => {
       for (let i = 0; i < 4; i++) {
         //highlight the li if it is the correct answer
         let li = `li_${index}_${i}`;
         let r = `radio_${index}_${i}`;
         liElement = document.querySelector('#' + li);
         radioElement = document.querySelector('#' + r);
-        if (quizItem.a == i) {
-          //change background color of li element here
+        if (quizItem.a === i) {
+          //change background color of li element here if correct
           liElement.style.backgroundColor = "green";
+          
+          //change background color of li element here if incorrect
+        } else {
+          liElement.style.backgroundColor = "red";
         }
-        if (radioElement.checked) {
-          // code for task 1 goes here
-          if(quizItem.a == i ){
-            score += 1;
+        // code for task 1 goes here
+        if (radioElement.checked && quizItem.a === i) {
+          score++;
+          
           }
         }
-      } 
-        
-     showScore.innerText = score;
+           
+            
     });
-
-    const btnSubmit = document.querySelector("#btnSubmit");
-
-    btnSubmit.addEventListener("click", calculateScore);
-
-  // btnSubmit.addEventListener = 'click', function () {
-  //     document.querySelector('#score').style.display = 'block';
-  //     btnSubmit.quizBlock.score.innerHTML =`You got a score of ${calculateScore}`;
-  //   };
-   
-          
   
-      
-          // function showResults
-          
-          //  const submitButton = document.getElementById('btnSubmit');
-          //  submitButton.onclick = function(){
-          //    quizBlock.score.innerHTML =`You got a score of ${calculateScore}`;
-          //  }
-        
+  };
+  // showScore.innerText = score;
 
-        }
-          
-          // getelementbyId.quizBlock.innerHTML = `You have answered ${quizItem[a].score} of ${quizItem.data.length} correctly.`;
-          
-          // call the displayQuiz function
-          displayQuiz();
-                  
-        });
-        
-   
+ // function showResults
 
+  function showScore() {
+    const scoreIs = document.getElementById('score');
+  scoreIs.innerHTML = `You got a total score of: ${score} out of 5`;
+  }
+
+//   // call the displayQuiz function
+  displayQuiz();
+
+  const submitButton = document.getElementById('btnSubmit');
+
+  submitButton.addEventListener("click", () => {
+    submitButton.style.display = 'none';
+    calculateScore();
+    showScore();
+  });
+
+  // const resetButton = document.getElementById('btnReset');
+  // resetButton.addEventListener('click', () => {
+  //   location.reload()
+  // });
+});
          
-         
           
-
-    
    
-
